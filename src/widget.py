@@ -15,3 +15,10 @@ def mask_account_card (number: str) -> str:
         card_masked += ' '
         card_masked += card_number_masked
         return card_masked
+
+
+def get_date (date_str: str) -> str:
+    date_str = date_str[:10]
+    splitted_date = date_str.split('-')
+
+    return f'{splitted_date[-1]}.{splitted_date[-2]}.{splitted_date[-3]}'
