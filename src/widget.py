@@ -4,10 +4,10 @@ from src import masks
 def mask_account_card(number: str) -> str:
     """This function masks both account and card numbers"""
 
-    if number == "" or number == None:
-        raise ValueError('Please enter account number or card number')
+    if number == "" or number is None:
+        raise ValueError("Please enter account number or card number")
     if not isinstance(number, str):
-        raise TypeError('Please enter name and number of card or account')
+        raise TypeError("Please enter name and number of card or account")
 
     number_splitted = number.split()
 
@@ -31,15 +31,15 @@ def get_date(date_str: str) -> str:
     """This function transforms a date string"""
 
     if date_str == "":
-        raise ValueError('Please enter date string')
+        raise ValueError("Please enter date string")
     if len(date_str) != 26:
-        raise ValueError('Date string must have a specific format')
+        raise ValueError("Date string must have a specific format")
 
     date_str = date_str[:10]
     splitted_date = date_str.split("-")
 
     for i in splitted_date:
         if not i.isdigit():
-            raise TypeError('Date must be a number')
+            raise TypeError("Date must be a number")
 
     return f"{splitted_date[-1]}.{splitted_date[-2]}.{splitted_date[-3]}"
