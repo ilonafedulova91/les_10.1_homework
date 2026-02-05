@@ -1,5 +1,5 @@
 def filter_by_currency(transactions: list[dict], currency: str):
-
+    """This function filters transactions by currency"""
     if transactions == [] or transactions is None:
         raise ValueError("The data base is empty")
 
@@ -17,6 +17,7 @@ def filter_by_currency(transactions: list[dict], currency: str):
 
 
 def transaction_descriptions(transactions: list[dict]):
+    """This function generates transaction descriptions"""
     if transactions == [] or transactions is None:
         raise ValueError("The data base is empty")
     for transaction in transactions:
@@ -28,6 +29,7 @@ def transaction_descriptions(transactions: list[dict]):
 
 
 def card_number_generator(start: int, end: int):
+    """This function generates card numbers"""
     if start > end:
         raise ValueError("The start cannot be bigger than the end")
     if start < 0 or end < 0:
