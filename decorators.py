@@ -1,6 +1,7 @@
 from functools import wraps
 
 def log(filename=None):
+    """ This is a logger decorator """
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
