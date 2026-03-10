@@ -14,7 +14,3 @@ def load_json_operations(file_path: str) -> list[dict]:
 
     except (FileNotFoundError, json.JSONDecodeError):
         return []
-
-
-if __name__ == "__main__":
-    print(load_json_operations("C:\PythonProjects\les_12.1_homework\data\operations.json"))

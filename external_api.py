@@ -14,7 +14,7 @@ def convert_transaction(transaction: dict, url=BASE_URL) -> float:
     if transaction == {}:
         raise ValueError("Transaction cannot be empty")
 
-    currency = str(transaction.get("operationAmount", {}).get("currency", "").get("code", ""))
+    currency = str(transaction.get("operationAmount", {}).get("currency", {}).get("code", ""))
     value = float(transaction.get("operationAmount", {}).get("amount", "0"))
 
     if currency == "":
