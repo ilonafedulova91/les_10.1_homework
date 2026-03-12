@@ -38,4 +38,4 @@ def card_number_generator(start: int, end: int):
         raise ValueError("Please enter a number in the range of 1 to 9999999999999999")
     for n in range(start, end + 1):
         card_number = f"{n:016d}"
-        yield " ".join(card_number[i:i + 4] for i in range(0, 16, 4))
+        yield " ".join(card_number[i : i + 4] for i in range(0, 16, 4))
