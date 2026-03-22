@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def read_csv(file_path: str) -> list[dict]:
     """The function reads a csv file"""
     if not isinstance(file_path, str):
@@ -13,6 +14,7 @@ def read_csv(file_path: str) -> list[dict]:
         return []
 
     return df.to_dict(orient="records")
+
 
 def read_excel(file_path: str) -> list[dict]:
     """The function reads an excel file"""
