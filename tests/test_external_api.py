@@ -2,7 +2,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from external_api import convert_transaction
+from src.external_api import convert_transaction
 
 
 def test_convert_transaction_rub():

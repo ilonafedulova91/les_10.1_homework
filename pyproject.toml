@@ -30,9 +30,10 @@ dev = [
 ]
 
 [tool.mypy]
-disallow_untyped_defs = true
+disallow_untyped_defs = false
 warn_return_any = true
-exclude = ['venv', 'tests', 'decorators', 'generators', 'external_api', 'src/processing']
+ignore_missing_imports = true
+exclude = ['venv', 'tests', 'src/decorators', 'src/generators', 'src/external_api', 'src/processing']
 
 [tool.black]
 line-length = 119

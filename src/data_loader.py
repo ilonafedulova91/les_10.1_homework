@@ -9,7 +9,7 @@ def read_csv(file_path: str) -> list[dict]:
         raise ValueError("The file path must end with .csv")
 
     try:
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path, sep=";")
     except FileNotFoundError:
         return []
 

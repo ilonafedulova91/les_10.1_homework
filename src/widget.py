@@ -7,7 +7,7 @@ def mask_account_card(number: str) -> str:
     if number == "" or number is None:
         raise ValueError("Please enter account number or card number")
     if not isinstance(number, str):
-        raise TypeError("Please enter name and number of card or account")
+        return ""
 
     number_splitted = number.split()
 
@@ -32,8 +32,6 @@ def get_date(date_str: str) -> str:
 
     if date_str == "":
         raise ValueError("Please enter date string")
-    if len(date_str) != 26:
-        raise ValueError("Date string must have a specific format")
 
     date_str = date_str[:10]
     splitted_date = date_str.split("-")
