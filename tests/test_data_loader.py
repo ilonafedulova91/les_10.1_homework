@@ -20,7 +20,7 @@ def test_read_csv_success(mock_read_csv):
 
     assert result == mock_df.to_dict(orient="records")
 
-    mock_read_csv.assert_called_once_with("test.csv")
+    mock_read_csv.assert_called_once_with("test.csv", sep=";")
 
 
 @patch("pandas.read_csv")
