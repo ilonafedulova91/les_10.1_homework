@@ -2,7 +2,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from external_api import convert_transaction
+from src.external_api import convert_transaction
 
 
 def test_convert_transaction_rub():
@@ -34,7 +34,7 @@ def test_convert_transaction_usd_success():
     mock_response.status_code = 200
     mock_response.json.return_value = {"result": 9000}
 
-    with patch("external_api.requests.get", return_value=mock_response):
+    with patch("src.external_api.requests.get", return_value=mock_response):
         result = convert_transaction(transaction)
 
     assert result == 9000
@@ -53,7 +53,7 @@ def test_convert_transaction_usd_error():
     mock_response = Mock()
     mock_response.status_cose = 500
 
-    with patch("external_api.requests.get", return_value=mock_response):
+    with patch("src.external_api.requests.get", return_value=mock_response):
         with pytest.raises(ValueError):
             convert_transaction(transaction)
 

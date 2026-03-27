@@ -4,15 +4,17 @@ def filter_by_currency(transactions: list[dict], currency: str):
         raise ValueError("The data base is empty")
 
     for transaction in transactions:
-        if (
-            transaction["operationAmount"]["currency"]["code"] == ""
-            or transaction["operationAmount"]["currency"]["code"] is None
-        ):
+        currency_code = None
+        if "operationAmount" in transaction:
+            currency_code = transaction.get("operationAmount", {}).get("currency", {}).get("code")
+        elif "currency_code" in transaction:
+            currency_code = transaction.get("currency_code")
+        if not currency_code:
             raise ValueError("The currency code is empty")
-        if transaction["operationAmount"]["currency"]["code"].isdigit():
+        if currency_code.isdigit():
             raise TypeError("The currency code is invalid")
 
-        if transaction["operationAmount"]["currency"]["code"] == currency:
+        if currency_code == currency:
             yield transaction
 
 

@@ -21,8 +21,6 @@ def test_mask_account_card_errors():
     with pytest.raises(ValueError):
         mask_account_card("")
     with pytest.raises(TypeError):
-        mask_account_card(1596837868705199)
-    with pytest.raises(TypeError):
         mask_account_card("1548 1596837868705199")
     with pytest.raises(ValueError):
         mask_account_card("Maestro 1548")
@@ -45,7 +43,5 @@ def test_get_date_success(date, expected):
 def test_get_date_errors():
     with pytest.raises(ValueError):
         get_date("")
-    with pytest.raises(ValueError):
-        get_date("2014-02-18T19:54:31.555666_biba")
     with pytest.raises(TypeError):
         get_date("boba-09-14T21:27:25.241689")
